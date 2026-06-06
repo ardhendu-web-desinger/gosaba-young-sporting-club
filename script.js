@@ -66,3 +66,39 @@ whatsapp.style.transform="scale(1)";
 }
 
 console.log("Website Loaded Successfully");
+function createButterfly(x,y){
+
+const butterfly=document.createElement("div");
+
+butterfly.className="butterfly";
+
+butterfly.innerHTML="🦋";
+
+butterfly.style.left=x+"px";
+butterfly.style.top=y+"px";
+
+document.body.appendChild(butterfly);
+
+setTimeout(()=>{
+butterfly.remove();
+},4000);
+
+}
+
+document.addEventListener("click",(e)=>{
+createButterfly(e.clientX,e.clientY);
+});
+
+document.addEventListener("touchstart",(e)=>{
+const touch=e.touches[0];
+createButterfly(touch.clientX,touch.clientY);
+});
+
+window.addEventListener("scroll",()=>{
+
+createButterfly(
+Math.random()*window.innerWidth,
+window.innerHeight-100
+);
+
+});
