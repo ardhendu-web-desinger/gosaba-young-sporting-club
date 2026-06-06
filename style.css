@@ -207,3 +207,21 @@ font-size:35px;
 }
 
 }
+.butterfly{
+position:fixed;
+font-size:30px;
+pointer-events:none;
+animation:fly 4s linear forwards;
+z-index:9999;
+}
+
+@keyframes fly{
+0%{
+opacity:1;
+transform:translateY(0) rotate(0deg);
+}
+100%{
+opacity:0;
+transform:translateY(-300px) translateX(150px) rotate(360deg);
+}
+}
